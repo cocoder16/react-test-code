@@ -15,7 +15,7 @@ const TodoForm = ({ onInsert }) => {
   );
 
   return (
-    <form onSubmit={onSubmit}>
+    <form data-testid="TodoForm" onSubmit={onSubmit}>
       <input
         placeholder="할 일을 입력하세요"
         value={value}
