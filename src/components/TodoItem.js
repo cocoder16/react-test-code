@@ -5,6 +5,8 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
   const toggle = useCallback(() => onToggle(id), [id, onToggle]);
   const remove = useCallback(() => onRemove(id), [id, onRemove]);
 
+  console.log(`Rendered { id : ${id}}`);
+
   return (
     <li>
       <span
@@ -20,4 +22,4 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
   );
 };
 
-export default TodoItem;
+export default React.memo(TodoItem);
