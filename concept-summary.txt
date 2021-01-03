@@ -60,4 +60,8 @@ https://velog.io/@velopert/%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%85%8C%EC%8A%A4%ED%8A%
 API 레퍼런스
 https://testing-library.com/docs/dom-testing-library/api-async
 
+- waitFor
+waitFor는 프로미스다. 테스트 케이스가 성공하면 콜백함수의 리턴값을 resolve한다.
 
+- waitForElementToBeRemoved
+콜백함수의 리턴값인 엘리먼트가 사라지는지를 테스트 한다.
