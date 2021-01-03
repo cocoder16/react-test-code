@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 
 const TodoItem = ({ todo, onToggle, onRemove }) => {
   const { id, text, done } = todo;
@@ -11,7 +11,7 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
     <li>
       <span
         style={{
-          textDecoration: done ? "line-through" : "none",
+          textDecoration: done ? 'line-through' : 'none',
         }}
         onClick={toggle}
       >

@@ -1,26 +1,26 @@
-import React, { useState, useRef, useCallback } from "react";
-import TodoList from "./TodoList";
-import TodoForm from "./TodoForm";
+import React, { useState, useRef, useCallback } from 'react';
+import TodoList from './TodoList';
+import TodoForm from './TodoForm';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([
     {
       id: 1,
-      text: "TDD 배우기",
+      text: 'TDD 배우기',
       done: true,
     },
     {
       id: 2,
-      text: "react-testing-library 사용하기",
+      text: 'react-testing-library 사용하기',
       done: true,
     },
   ]);
 
   const nextId = useRef(3); // 새로 추가 할 항목에서 사용 할 id
 
-  const onInsert = useCallback((text) => {
+  const onInsert = useCallback(text => {
     // 새 항목 추가 후
-    setTodos((todos) =>
+    setTodos(todos =>
       todos.concat({
         id: nextId.current,
         text,
@@ -49,9 +49,9 @@ const TodoApp = () => {
     // setTodos의 파라미터로서 updater를 사용함으로서, useCallback의 dep로 todos를 넣어줄 필요가 없음.
     // todos가 바뀔 때마다 callback 함수를 재생성하지 않기 때문에, TodoItem에 React.memo를 쓴게 최적화에 도움이 됨.
 
-    (id) => {
-      setTodos((todos) =>
-        todos.map((todo) =>
+    id => {
+      setTodos(todos =>
+        todos.map(todo =>
           todo.id === id ? { ...todo, done: !todo.done } : todo
         )
       );
@@ -59,8 +59,8 @@ const TodoApp = () => {
     []
   );
 
-  const onRemove = useCallback((id) => {
-    setTodos((todos) => todos.filter((todo) => todo.id !== id));
+  const onRemove = useCallback(id => {
+    setTodos(todos => todos.filter(todo => todo.id !== id));
   }, []);
 
   return (
