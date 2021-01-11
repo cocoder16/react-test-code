@@ -8,7 +8,7 @@ import {
 } from '@testing-library/react';
 
 describe('<Counter />', () => {
-  it('+ - buttons, result span exist', async () => {
+  it('+ - buttons, result span exist', () => {
     const { getByText } = render(<Counter />);
     getByText('0');
     getByText('+');
