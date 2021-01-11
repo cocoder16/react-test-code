@@ -1,7 +1,13 @@
 import React from 'react';
 
 const Counter = () => {
-  return <div>Counter</div>;
+  return (
+    <>
+      <button>-</button>
+      <span>0</span>
+      <button>+</button>
+    </>
+  );
 };
 
 export default Counter;
