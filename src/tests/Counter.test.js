@@ -8,17 +8,30 @@ import {
 } from '@testing-library/react';
 
 describe('<Counter />', () => {
+  const setup = (props = {}) => {
+    const utils = render(<Counter {...props} />);
+    const { getByText, getByTestId } = utils;
+    const resultText = getByTestId('result');
+    const plusBtn = getByText('+');
+    const minusBtn = getByText('-');
+    return {
+      ...utils,
+      resultText,
+      plusBtn,
+      minusBtn,
+    };
+  };
+
   it('+ - buttons, result span exist', () => {
-    const { getByText } = render(<Counter result='0' />); // todo: number넣고 string으로 변환
-    getByText('0');
-    getByText('+');
-    getByText('-');
+    const { resultText, plusBtn, minusBtn } = setup({ result: 0 });
+    expect(resultText).toBeTruthy();
+    expect(plusBtn).toBeTruthy();
+    expect(minusBtn).toBeTruthy();
   });
 
   it('click (+) button', () => {
     const onClickPlusBtn = jest.fn();
-    const { getByText } = render(<Counter onClickPlusBtn={onClickPlusBtn} />);
-    const plusBtn = getByText('+');
+    const { plusBtn } = setup({ onClickPlusBtn });
     fireEvent.click(plusBtn);
     expect(onClickPlusBtn).toHaveBeenCalledTimes(1);
   });

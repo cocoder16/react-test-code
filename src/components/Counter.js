@@ -4,7 +4,7 @@ const Counter = ({ onClickPlusBtn, result }) => {
   return (
     <>
       <button>-</button>
-      <span>{result}</span>
+      <span data-testid='result'>{result}</span>
       <button type='button' onClick={onClickPlusBtn}>
         +
       </button>
