@@ -2,14 +2,14 @@ import React from 'react';
 import Counter from 'components/Counter';
 import {
   render,
-  // fireEvent,
+  fireEvent,
   // waitFor,
   // waitForElementToBeRemoved,
 } from '@testing-library/react';
 
 describe('<Counter />', () => {
   it('+ - buttons, result span exist', () => {
-    const { getByText } = render(<Counter />);
+    const { getByText } = render(<Counter result='0' />); // todo: number넣고 string으로 변환
     getByText('0');
     getByText('+');
     getByText('-');
@@ -19,9 +19,7 @@ describe('<Counter />', () => {
     const onClickPlusBtn = jest.fn();
     const { getByText } = render(<Counter onClickPlusBtn={onClickPlusBtn} />);
     const plusBtn = getByText('+');
-    const resultText = getByText('0');
     fireEvent.click(plusBtn);
-    expect(onClickPlusBtn).toHaveBeenCalled();
-    expect(resultText).toHaveTextContent('1');
+    expect(onClickPlusBtn).toHaveBeenCalledTimes(1);
   });
 });
