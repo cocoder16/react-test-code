@@ -14,4 +14,14 @@ describe('<Counter />', () => {
     getByText('+');
     getByText('-');
   });
+
+  it('click (+) button', () => {
+    const onClickPlusBtn = jest.fn();
+    const { getByText } = render(<Counter onClickPlusBtn={onClickPlusBtn} />);
+    const plusBtn = getByText('+');
+    const resultText = getByText('0');
+    fireEvent.click(plusBtn);
+    expect(onClickPlusBtn).toHaveBeenCalled();
+    expect(resultText).toHaveTextContent('1');
+  });
 });
