@@ -35,4 +35,10 @@ describe('Counter store', () => {
       result: 1,
     });
   });
+
+  it('minus reducer', () => {
+    expect(reducer(undefined, expectedAction.plus)).toEqual({
+      result: 0,
+    });
+  });
 });
