@@ -10,6 +10,8 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case PLUS:
       return { ...state, result: state.result + 1 };
+    case MINUS:
+      return { ...state, result: state.result - 1 };
     default:
       return state;
   }

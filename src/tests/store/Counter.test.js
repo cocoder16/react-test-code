@@ -4,8 +4,8 @@ import reducer from 'store/reducers/Counter';
 // plus action 생성 O
 // minus action 생성 O
 // 초기 state O
-// plus 리듀스 O
-// minus 리듀스
+// plus 리듀서 O
+// minus 리듀서
 
 describe('Counter store', () => {
   const prefix = 'COUNTER';
@@ -37,8 +37,8 @@ describe('Counter store', () => {
   });
 
   it('minus reducer', () => {
-    expect(reducer(undefined, expectedAction.plus)).toEqual({
-      result: 0,
+    expect(reducer(undefined, expectedAction.minus)).toEqual({
+      result: -1,
     });
   });
 });
