@@ -5,7 +5,7 @@ import reducer from 'store/reducers/Counter';
 // minus action 생성 O
 // 초기 state O
 // plus 리듀서 O
-// minus 리듀서
+// minus 리듀서 O
 
 describe('Counter store', () => {
   const prefix = 'COUNTER';
