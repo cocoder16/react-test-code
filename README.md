@@ -11,3 +11,7 @@ https://redux.js.org/recipes/writing-tests
 react-testing-library docs
 
 https://testing-library.com/docs/
+
+jest docs
+
+https://jestjs.io/docs/en/expect
