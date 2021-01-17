@@ -9,7 +9,7 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case PLUS:
-      return { ...state, id: action.payload };
+      return { ...state, result: state.result + 1 };
     default:
       return state;
   }
