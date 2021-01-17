@@ -8,10 +8,11 @@ import * as Actions from 'store/actions/Counter';
 describe('actions', () => {
   it('create actions', () => {
     const prefix = 'COUNTER';
-    const expectedAction = {
-      type: `${prefix}/PLUS`,
-    };
-    const action = Actions.plus();
+    const expectedAction = [
+      { type: `${prefix}/PLUS` },
+      { type: `${prefix}/MINUS` },
+    ];
+    const action = [Actions.plus(), Actions.minus()];
     expect(action).toEqual(expectedAction);
   });
 });
