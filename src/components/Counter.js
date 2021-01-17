@@ -3,11 +3,19 @@ import React from 'react';
 const Counter = ({ onClickPlusBtn, onClickMinusBtn, result }) => {
   return (
     <div data-testid='Counter'>
-      <button type='button' onClick={onClickMinusBtn}>
+      <button
+        data-testid='Counter-plusBtn'
+        type='button'
+        onClick={onClickMinusBtn}
+      >
         -
       </button>
       <span data-testid='result'>{result}</span>
-      <button type='button' onClick={onClickPlusBtn}>
+      <button
+        data-testid='Counter-minusBtn'
+        type='button'
+        onClick={onClickPlusBtn}
+      >
         +
       </button>
     </div>

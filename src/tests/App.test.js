@@ -9,11 +9,11 @@ describe('intergration test', () => {
     const utils = render(<App {...props} />);
     const { getByTestId } = utils;
     const resultText = getByTestId('result');
-    const plusBtn = getByText('+');
-    const minusBtn = getByText('-');
+    // 컴포넌트 유닛테스트에서는 +, -가 렌더링 되는지 알기 위해 text로 찾았지만 통합테스트에서는 정확히 +, -를 확정짓기 위해 testid를 사용한다.
+    const plusBtn = getByTestId('Counter-plusBtn');
+    const minusBtn = getByTestId('Counter-minusBtn');
     return {
       ...utils,
-      counterComponent,
       resultText,
       plusBtn,
       minusBtn,
