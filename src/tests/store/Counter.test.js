@@ -1,6 +1,6 @@
 import * as Actions from 'store/actions/Counter';
 
-// plus action 생성
+// plus action 생성 O
 // minus action 생성
 // plus 리듀스
 // minus 리듀스
