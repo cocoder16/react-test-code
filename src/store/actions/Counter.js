@@ -1,7 +1,7 @@
 //action type
-const prefix = 'COUNTER';
-const PLUS = `${prefix}/PLUS`;
-const MINUS = `${prefix}/MINUS`;
+export const prefix = 'COUNTER';
+export const PLUS = `${prefix}/PLUS`;
+export const MINUS = `${prefix}/MINUS`;
 
 //function creating action
 export const plus = () => ({
