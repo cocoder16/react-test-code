@@ -6,8 +6,6 @@ import { render, fireEvent } from '@testing-library/react';
 // +, -, result 존재 O
 // + 버튼 클릭 리스너 O
 // - 버튼 클릭 리스너 O
-// + 누르면 숫자++
-// - 누르면 숫자--
 
 describe('<Counter />', () => {
   const setup = (props = {}) => {
@@ -34,7 +32,7 @@ describe('<Counter />', () => {
   it('click + - buttons', () => {
     const onClickPlusBtn = jest.fn();
     const onClickMinusBtn = jest.fn();
-    const { resultText, plusBtn, minusBtn } = setup({
+    const { plusBtn, minusBtn } = setup({
       onClickPlusBtn,
       onClickMinusBtn,
     });
