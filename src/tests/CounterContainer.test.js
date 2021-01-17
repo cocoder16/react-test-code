@@ -22,12 +22,10 @@ describe('<CounterContainer />', () => {
     };
   };
 
-  // it('+ - buttons, result span exist', () => {
-  //   const { resultText, plusBtn, minusBtn } = setup({ result: 0 });
-  //   expect(resultText).toBeTruthy();
-  //   expect(plusBtn).toBeTruthy();
-  //   expect(minusBtn).toBeTruthy();
-  // });
+  it('render Counter component', () => {
+    const { getByTestId } = setup();
+    getByTestId('Counter');
+  });
 
   it('click plus btn => result + 1', () => {
     const { resultText, plusBtn } = setup();
