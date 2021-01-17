@@ -7,8 +7,6 @@ import { render, fireEvent } from '@testing-library/react';
 // + 버튼 클릭 핸들러 O
 // - 버튼 클릭 핸들러 O
 
-// 최초 state값을 스토어에서 불러서 렌더링하는지
-
 describe('<CounterContainer />', () => {
   const setup = (props = {}) => {
     const utils = render(<CounterContainer {...props} />);

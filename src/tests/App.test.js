@@ -2,7 +2,7 @@ import React from 'react';
 import App from 'App';
 import { render, fireEvent } from '@testing-library/react';
 
-// Counter 통합테스트
+// Counter 통합테스트 O
 
 describe('intergration test', () => {
   const setup = (props = {}) => {
