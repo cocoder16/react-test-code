@@ -1,16 +1,11 @@
 import React from 'react';
 import Counter from 'components/Counter';
-import {
-  render,
-  fireEvent,
-  // waitFor,
-  // waitForElementToBeRemoved,
-} from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 // TODO
 // +, -, result 존재 O
-// + 버튼 클릭 핸들러 O
-// - 버튼 클릭 핸들러
+// + 버튼 클릭 리스너 O
+// - 버튼 클릭 리스너 O
 // + 누르면 숫자++
 // - 누르면 숫자--
 
@@ -39,10 +34,13 @@ describe('<Counter />', () => {
   it('click + - buttons', () => {
     const onClickPlusBtn = jest.fn();
     const onClickMinusBtn = jest.fn();
-    const { plusBtn, minusBtn } = setup({ onClickPlusBtn, onClickMinusBtn });
+    const { resultText, plusBtn, minusBtn } = setup({
+      onClickPlusBtn,
+      onClickMinusBtn,
+    });
     fireEvent.click(plusBtn);
-    fireEvent.click(minusBtn);
     expect(onClickPlusBtn).toHaveBeenCalledTimes(1);
+    fireEvent.click(minusBtn);
     expect(onClickMinusBtn).toHaveBeenCalledTimes(1);
   });
 });
