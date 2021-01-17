@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Counter = ({ onClickPlusBtn, result }) => {
+const Counter = ({ onClickPlusBtn, onClickMinusBtn, result }) => {
   return (
     <>
-      <button>-</button>
+      <button type='button' onClick={onClickMinusBtn}>
+        -
+      </button>
       <span data-testid='result'>{result}</span>
       <button type='button' onClick={onClickPlusBtn}>
         +
