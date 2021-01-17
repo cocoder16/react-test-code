@@ -9,7 +9,17 @@ function CounterContainer() {
     setResult(result + 1);
   };
 
-  return <Counter onClickPlusBtn={onClickPlusBtn} result={result} />;
+  const onClickMinusBtn = () => {
+    setResult(result - 1);
+  };
+
+  return (
+    <Counter
+      onClickPlusBtn={onClickPlusBtn}
+      onClickMinusBtn={onClickMinusBtn}
+      result={result}
+    />
+  );
 }
 
 export default CounterContainer;
