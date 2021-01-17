@@ -9,14 +9,19 @@ import reducer from 'store/reducers/Counter';
 
 describe('Counter store', () => {
   const prefix = 'COUNTER';
-  const expectedAction = [
-    { type: `${prefix}/PLUS` },
-    { type: `${prefix}/MINUS` },
-  ];
+  const expectedAction = {
+    plus: { type: `${prefix}/PLUS` },
+    minus: { type: `${prefix}/MINUS` },
+  };
 
   it('create actions', () => {
-    const action = [Actions.plus(), Actions.minus()];
-    expect(action).toEqual(expectedAction);
+    const action = {
+      plus: Actions.plus,
+      minus: Actions.minus,
+    };
+    Object.keys(action).forEach(key => {
+      expect(action[key]()).toEqual(expectedAction[key]);
+    });
   });
 
   it('initial state', () => {
@@ -26,7 +31,7 @@ describe('Counter store', () => {
   });
 
   it('plus reducer', () => {
-    expect(reducer(undefined, expectedAction[0])).toEqual({
+    expect(reducer(undefined, expectedAction.plus)).toEqual({
       result: 1,
     });
   });
